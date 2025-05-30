@@ -1,7 +1,7 @@
 import {BoardState, Column, Task} from "@/app/types";
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
-const boardInitialState: BoardState = {
+const initialState: BoardState = {
     columns: [{
         id: 'todo',
         title: 'To Do',
@@ -24,7 +24,7 @@ const boardInitialState: BoardState = {
 }
 export const boardSlice = createSlice({
     name: 'board',
-    initialState: boardInitialState,
+    initialState: initialState,
     reducers: {
         addTask: (state, action:PayloadAction<{ columnId: string; task: Task }>) => {
             const { columnId, task } = action.payload
@@ -70,3 +70,4 @@ export const boardSlice = createSlice({
 
 export const { addTask, editTask, deleteTask, moveTask } = boardSlice.actions
 export default boardSlice.reducer
+export const boardInitialState = initialState
