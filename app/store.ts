@@ -1,24 +1,25 @@
-import { configureStore } from '@reduxjs/toolkit'
-import boardReducer, {boardInitialState}  from './boardSlice'
-import loadFromLS from "@/app/lib/loadFromLS";
-import saveToLS from "@/app/lib/saveToLS";
+import loadState from '@/app/lib/loadState';
+import saveState from '@/app/lib/saveState';
+import { configureStore } from '@reduxjs/toolkit';
+import boardReducer, { boardInitialState } from './boardSlice';
 
-const PERSIST_KEY = 'scrumboard'
+const PERSIST_KEY = 'scrumboard';
 
 const preloadedState = {
-    board: loadFromLS<typeof boardInitialState>(PERSIST_KEY) ?? boardInitialState,
-}
+  board: loadState<typeof boardInitialState>(PERSIST_KEY) ?? boardInitialState,
+};
 
 export const store = configureStore({
-    reducer: {
-        board: boardReducer,
-    },
-    preloadedState,
-})
+  reducer: {
+    board: boardReducer,
+  },
+
+  preloadedState,
+});
 
 store.subscribe(() => {
-    saveToLS(PERSIST_KEY, store.getState().board)
-})
+  saveState(PERSIST_KEY, store.getState().board);
+});
 
-export type RootState = ReturnType<typeof store.getState>
-export type AppDispatch = typeof store.dispatch
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

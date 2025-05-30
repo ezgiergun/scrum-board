@@ -1,0 +1,77 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "extends": ["ultracite"],
+  "files": {
+    "ignore": []
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "ignore": [],
+    "attributePosition": "auto",
+    "indentStyle": "tab",
+    "indentWidth": 2,
+    "lineWidth": 80,
+    "lineEnding": "lf"
+  },
+  "javascript": {
+    "formatter": {
+      "arrowParentheses": "always",
+      "bracketSameLine": false,
+      "bracketSpacing": true,
+      "jsxQuoteStyle": "double",
+      "quoteProperties": "asNeeded",
+      "semicolons": "always"
+    }
+  },
+  "css": {
+    "formatter": {
+      "enabled": true
+    },
+    "linter": {
+      "enabled": true
+    }
+  },
+  "linter": {
+    "rules": {
+      "a11y": {
+        "noSvgWithoutTitle": "off",
+        "useKeyWithClickEvents": "off"
+      },
+      "performance": {
+        "useTopLevelRegex": "off"
+      },
+      "nursery": {
+        "noEnum": "off",
+        "noExportedImports": "off",
+        "noNestedTernary": "off",
+        "noStaticElementInteractions": "off",
+        "noDynamicNamespaceImportAccess": "off"
+      },
+      "complexity": {
+        "noForEach": "off",
+        "noExcessiveCognitiveComplexity": "off"
+      },
+      "suspicious": {
+        "noAssignInExpressions": "off",
+        "noExplicitAny": "off",
+        "noEmptyBlockStatements": "warn",
+        "useAwait": "off",
+        "noConsole": {
+          "options": {
+            "allow": ["assert", "error", "info", "warn"]
+          },
+          "level": "warn"
+        }
+      },
+      "style": {
+        "useFilenamingConvention": {
+          "level": "warn",
+          "options": {
+            "filenameCases": ["camelCase", "PascalCase", "kebab-case"]
+          }
+        }
+      }
+    }
+  }
+}

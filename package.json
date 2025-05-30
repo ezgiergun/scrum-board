@@ -3,27 +3,48 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
     "build": "next build",
+    "dev": "next dev --turbopack",
+    "format": "ultracite format",
+    "knip": "knip --config knip.ts",
+    "lint": "ultracite lint",
+    "lint:fix": "biome check --fix --unsafe",
+    "sort": "sort-package-json \"package.json\" && pnpm run format",
     "start": "next start",
-    "lint": "next lint"
+    "stylelint": "stylelint \"**/*.css\" --fix",
+    "typeCheck": "tsc --noEmit --emitDeclarationOnly false",
+    "update": "npm-check-updates -u --deep -x pnpm && pnpm i"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.8.2",
+    "clsx": "^2.1.1",
     "next": "15.3.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-redux": "^9.2.0"
+    "react-redux": "^9.2.0",
+    "sharp": "^0.34.2"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
+    "@biomejs/biome": "^1.9.4",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "15.3.3",
+    "eslint": "8",
+    "knip": "^5.58.0",
+    "npm-check-updates": "^18.0.1",
+    "prettier": "^3.5.3",
+    "sort-package-json": "^3.2.1",
+    "stylelint": "^16.20.0",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "ultracite": "^4.2.5"
+  },
+  "packageManager": "pnpm@9.15.6",
+  "engines": {
+    "node": ">=22.3.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["sharp"]
   }
 }
