@@ -12,7 +12,7 @@ export default function Form({
   return (
     <form
       onSubmit={onSubmitAction}
-      className={cx('space-y-4 rounded-lg bg-elusive-500 p-4', className)}
+      className={cx('space-y-4 rounded-lg bg-elusive-500/80 p-4', className)}
       aria-labelledby={modalName}
       aria-describedby={`modal-${modalName}-desc`}
     >

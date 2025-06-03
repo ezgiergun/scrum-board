@@ -44,7 +44,7 @@ const CloseButton = memo(function CloseButton({
       type="button"
       aria-label="Close modal"
       title="Close"
-      className="absolute top-2 right-3 translate-x-1.5 rounded-lg border-none bg-none p-[0.15rem] transition-all duration-200 hover:bg-elusive-500"
+      className="absolute top-2 right-3 translate-x-1.5 rounded-lg border-none bg-none p-[0.15rem] transition-all duration-200 hover:bg-elusive-500/50"
     >
       <CloseIcon size={18} color="#ff3b30" />
     </button>
@@ -133,7 +133,7 @@ function Window({ children, name }: WindowProps) {
         }}
         aria-modal="true"
         tabIndex={-1}
-        className="-translate-x-1/2 -translate-y-1/2 fixed top-1/2 left-1/2 transform rounded-lg bg-narenjiorange-500 p-5 shadow-md outline-none transition-all duration-500"
+        className="-translate-x-1/2 -translate-y-1/2 fixed top-1/2 left-1/2 transform rounded-lg bg-narenjiorange-500 p-7 shadow-md outline-none transition-all duration-500"
       >
         <CloseButton onClick={close} />
         {typeof children === 'function'
