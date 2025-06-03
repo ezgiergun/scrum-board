@@ -1,8 +1,5 @@
-import type { SVGProps } from 'react';
+import type React from 'react';
 
-interface SvgProps extends SVGProps<SVGSVGElement> {
-  color?: string;
-  width?: string | number;
-  height?: string | number;
+export interface SvgComponentProps extends React.SVGProps<SVGSVGElement> {
+  size?: number | string;
 }
-export type { SvgProps };

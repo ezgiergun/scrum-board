@@ -67,7 +67,11 @@ function ModalFormContent({
       modalName={modalName}
       onSubmitAction={(e: React.FormEvent) => handleSubmit(e, onCloseModal)}
     >
-      <Input ref={inputRef} placeholder={placeholder} className='border-freespeechblue-500' />
+      <Input
+        ref={inputRef}
+        placeholder={placeholder}
+        className="border-freespeechblue-500"
+      />
       <SubmitButton title={submitLabel} />
     </Form>
   );

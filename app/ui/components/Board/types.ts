@@ -1,3 +1,4 @@
 interface BoardProps {
-    className?: string;
+  className?: string;
 }
+export type { BoardProps };

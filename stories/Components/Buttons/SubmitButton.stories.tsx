@@ -32,9 +32,11 @@ const meta: Meta<typeof SubmitButton> = {
   },
   decorators: [
     (Story) => (
-        <div style={{ padding: '1rem', backgroundColor: '#f5f5f5', width:'25%' }}>
-          <Story />
-        </div>
+      <div
+        style={{ padding: '1rem', backgroundColor: '#f5f5f5', width: '25%' }}
+      >
+        <Story />
+      </div>
     ),
   ],
 };
@@ -48,6 +50,5 @@ export const Default: Story = {
   args: {
     title: 'Submit',
     onClickAction: () => alert('Submit button clicked!'),
-
   },
 };

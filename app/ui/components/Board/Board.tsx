@@ -15,12 +15,13 @@ import {
   useSensor,
   useSensors,
 } from '@dnd-kit/core';
+import clsx from 'clsx';
 import { useState } from 'react';
 import ModalButton from '../Buttons/ModalButton';
 import Task from '../Task';
-import clsx from "clsx";
+import type { BoardProps } from './types';
 
-export default function Board({className}: Readonly<BoardProps>) {
+export default function Board({ className }: Readonly<BoardProps>) {
   const columns = useAppSelector((state) => state.board.columns);
   const tasks = useAppSelector((state) => state.board.tasks);
   const dispatch = useAppDispatch();
@@ -76,7 +77,10 @@ export default function Board({className}: Readonly<BoardProps>) {
   return (
     <Modal>
       <main
-        className={clsx("flex h-[calc(100dvh-5rem)] flex-col-reverse flex-nowrap items-center gap-4 overflow-x-auto overflow-y-auto rounded-lg border-1 border-londonsquare-500 bg-freespeechblue-500 px-4 py-4 sm:flex-row sm:flex-wrap sm:px-20 sm:py-10 ", className)}
+        className={clsx(
+          'flex h-[calc(100dvh-5rem)] flex-col-reverse flex-nowrap items-center gap-4 overflow-x-auto overflow-y-auto rounded-lg border-1 border-londonsquare-500 bg-freespeechblue-500 px-4 py-4 sm:flex-row sm:flex-wrap sm:px-20 sm:py-10 ',
+          className
+        )}
         aria-label="Scrum board"
       >
         <DndContext
@@ -104,7 +108,7 @@ export default function Board({className}: Readonly<BoardProps>) {
                 aria-label="Add a new column"
                 className="rounded-lg bg-gray-100/10 px-4 py-2 text-sm hover:bg-gray-100/30"
               >
-                <AddColumnIcon color="#FFF" width={26} height={26} />
+                <AddColumnIcon color="#FFF" size={26} />
               </button>
             }
             placeholder="Type Your Column Title"

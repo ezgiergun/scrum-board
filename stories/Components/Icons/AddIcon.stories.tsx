@@ -1,24 +1,47 @@
+import AddIcon from '@/app/ui/components/Icons/AddIcon';
 import type { Meta, StoryObj } from '@storybook/react';
-import AddIcon from '../../../app/ui/components/Icons/AddIcon';
 
 const meta: Meta<typeof AddIcon> = {
   title: 'Icons/AddIcon',
   component: AddIcon,
   tags: ['autodocs'],
   argTypes: {
-    width: { control: 'text' },
-    height: { control: 'text' },
-    fill: { control: 'color' },
+    size: {
+      control: 'text',
+      description: 'Sets both width and height of the icon',
+    },
+    fill: {
+      control: 'color',
+      description: 'Fill color of the icon',
+    },
+    stroke: {
+      control: 'color',
+      description: 'Stroke color of the icon',
+    },
+    strokeWidth: {
+      control: 'number',
+      description: 'Width of the stroke',
+    },
+    className: {
+      control: 'text',
+      description: 'Additional class names',
+    },
+    style: {
+      control: 'object',
+      description: 'Inline styles for the icon',
+    },
   },
 };
 
 export default meta;
+
 type Story = StoryObj<typeof AddIcon>;
 
 export const Default: Story = {
   args: {
-    width: '2em',
-    height: '2em',
-    fill: '#4ade80',
+    size: '20',
+    fill: '#22c55e',
+    stroke: '#22c55e',
+    strokeWidth: 0,
   },
 };

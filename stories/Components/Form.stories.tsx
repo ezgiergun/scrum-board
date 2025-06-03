@@ -10,13 +10,15 @@ const meta: Meta<typeof Form> = {
   argTypes: {
     modalName: { control: 'text' },
     className: { control: false },
-      onSubmitAction: { action: 'submitted' },
+    onSubmitAction: { action: 'submitted' },
   },
   decorators: [
     (Story) => (
-        <div style={{ padding: '1rem', backgroundColor: '#f5f5f5', width:'55%' }}>
-          <Story />
-        </div>
+      <div
+        style={{ padding: '1rem', backgroundColor: '#f5f5f5', width: '55%' }}
+      >
+        <Story />
+      </div>
     ),
   ],
 };

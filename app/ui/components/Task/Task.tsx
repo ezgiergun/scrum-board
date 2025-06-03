@@ -75,7 +75,7 @@ export default function Task({
               className="rounded-full p-1 hover:bg-elusive-500"
               aria-label={`Edit task: ${task.title}`}
             >
-              <EditIcon width={16} height={16} color="#3c40c6" />
+              <EditIcon size={16} color="#3c40c6" />
             </button>
           }
           placeholder={task.title}
@@ -92,7 +92,7 @@ export default function Task({
               className="rounded-full p-1 hover:bg-elusive-500"
               aria-label={`Delete task: ${task.title}`}
             >
-              <DeleteIcon width={16} height={16} color="#3c40c6" />
+              <DeleteIcon size={16} color="#3c40c6" />
             </button>
           }
           confirmText="Are you sure you want to delete this task?"

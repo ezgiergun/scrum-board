@@ -6,19 +6,42 @@ const meta: Meta<typeof CloseIcon> = {
   component: CloseIcon,
   tags: ['autodocs'],
   argTypes: {
-    width: { control: 'text' },
-    height: { control: 'text' },
-    color: { control: 'color' },
+    size: {
+      control: 'text',
+      description: 'Width and height of the icon',
+    },
+    fill: {
+      control: 'color',
+      description: 'Fill color of the icon',
+    },
+    stroke: {
+      control: 'color',
+      description: 'Stroke color of the icon',
+    },
+    strokeWidth: {
+      control: 'number',
+      description: 'Width of the stroke',
+    },
+    className: {
+      control: 'text',
+      description: 'Additional class names',
+    },
+    style: {
+      control: 'object',
+      description: 'Inline styles for the icon',
+    },
   },
 };
 
 export default meta;
+
 type Story = StoryObj<typeof CloseIcon>;
 
 export const Default: Story = {
   args: {
-    width: 32,
-    height: 32,
-    color: '#ef4444',
+    size: '20',
+    fill: '#ef4444',
+    stroke: '#ef4444',
+    strokeWidth: 0,
   },
 };

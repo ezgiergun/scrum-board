@@ -12,9 +12,9 @@ import AddIcon from '@/app/ui/components/Icons/AddIcon';
 import DeleteIcon from '@/app/ui/components/Icons/DeleteIcon';
 import EditIcon from '@/app/ui/components/Icons/EditIcon';
 import { useDroppable } from '@dnd-kit/core';
+import clsx from 'clsx';
 import ModalButton from '../Buttons/ModalButton';
 import Task from '../Task';
-import clsx from "clsx";
 
 export default function Column({ column, className }: Readonly<ColumnProps>) {
   const tasks = useAppSelector((state) => state.board.tasks);
@@ -56,14 +56,17 @@ export default function Column({ column, className }: Readonly<ColumnProps>) {
   return (
     <section
       ref={setNodeRef}
-      className={clsx("max-h-screen min-h-[100px] w-full flex-shrink-0 rounded-lg bg-elusive-500 p-4 shadow sm:w-72", className)}
+      className={clsx(
+        'max-h-screen min-h-[100px] w-full flex-shrink-0 rounded-lg bg-elusive-500 p-4 shadow sm:w-72',
+        className
+      )}
       aria-labelledby={`column-title-${column.title}`}
     >
       <div
         className="mb-4 flex items-center justify-between"
         aria-label="Column title and controls"
       >
-        <h2 className="font-bold text-lg">{column.title}</h2>
+        <h2 className="truncate font-bold text-lg">{column.title}</h2>
         <div className="flex">
           <ModalButton
             modalName={`edit-column-${column.id}`}
@@ -74,7 +77,7 @@ export default function Column({ column, className }: Readonly<ColumnProps>) {
                 aria-label={`Edit column ${column.title}`}
                 className="rounded-lg p-2 hover:bg-elusive-500"
               >
-                <EditIcon width={20} height={20} color="#3c40c6" />
+                <EditIcon size={20} color="#3c40c6" />
               </button>
             }
             placeholder={column.title}
@@ -92,7 +95,7 @@ export default function Column({ column, className }: Readonly<ColumnProps>) {
                   aria-label={`Delete column ${column.title}`}
                   className="rounded-lg p-2 hover:bg-elusive-500"
                 >
-                  <DeleteIcon width={20} height={20} color="#3c40c6" />
+                  <DeleteIcon size={20} color="#3c40c6" />
                 </button>
               }
               confirmText="Are you sure you want to delete this column?"
@@ -126,7 +129,7 @@ export default function Column({ column, className }: Readonly<ColumnProps>) {
               aria-label={`Add task to column ${column.title}`}
               className="flex justify-center rounded-lg bg-gray-100 p-2 text-sm hover:bg-gray-200"
             >
-              <AddIcon color="#3c40c6" width={26} height={26} />
+              <AddIcon color="#3c40c6" size={26} />
             </button>
           }
           placeholder="Type a task title"

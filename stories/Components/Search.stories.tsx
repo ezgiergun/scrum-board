@@ -14,12 +14,13 @@ const meta: Meta<typeof Search> = {
 
   decorators: [
     (Story) => (
-        <MockProvider>
-        <div style={{ padding: '1rem', backgroundColor: '#f5f5f5', width:'20%' }}>
+      <MockProvider>
+        <div
+          style={{ padding: '1rem', backgroundColor: '#f5f5f5', width: '20%' }}
+        >
           <Story />
         </div>
-        </MockProvider>
-
+      </MockProvider>
     ),
   ],
 };

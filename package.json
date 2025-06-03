@@ -16,7 +16,7 @@
     "update": "npm-check-updates -u --deep -x pnpm && pnpm i",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "chromatic --project-token=chpt_0a10b1be7eabef7 --exit-zero-on-changes"
+    "chromatic": "chromatic --project-token=chpt_0a10b1be7eabef7"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",

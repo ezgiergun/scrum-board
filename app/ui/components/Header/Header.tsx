@@ -11,7 +11,7 @@ export default function Header() {
   return (
     <header className="flex h-18 items-center gap-2 px-4 py-4 sm:px-8 ">
       <div className="flex items-center gap-1 ps-0 sm:ps-18">
-        <BrandIcon width="2.35em" height="2.35em" color={'#05c46b'} />
+        <BrandIcon size="2.35em" color={'#05c46b'} />
         <h2
           className=" text-nowrap font-bold text-lg text-sunset-500 sm:text-2xl"
           aria-label="App title"
@@ -45,7 +45,7 @@ function FillButton() {
           type="button"
           title="Fill Board with Dummy Tasks"
         >
-          <MagicWandIcon width="1.35em" height="1.35em" color="#FFF" />
+          <MagicWandIcon size="1.35em" color="#FFF" />
         </button>
       }
       onConfirmAction={(close) => {

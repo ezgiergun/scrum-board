@@ -46,7 +46,7 @@ const CloseButton = memo(function CloseButton({
       title="Close"
       className="absolute top-2 right-3 translate-x-1.5 rounded-lg border-none bg-none p-[0.15rem] transition-all duration-200 hover:bg-elusive-500"
     >
-      <CloseIcon width={18} height={18} color="#ff3b30" />
+      <CloseIcon size={18} color="#ff3b30" />
     </button>
   );
 });

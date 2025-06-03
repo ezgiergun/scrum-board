@@ -32,9 +32,11 @@ const meta: Meta<typeof ModalButton> = {
   },
   decorators: [
     (Story) => (
-        <div style={{ padding: '1rem', backgroundColor: '#f5f5f5', width:'25%' }}>
-          <Story />
-        </div>
+      <div
+        style={{ padding: '1rem', backgroundColor: '#f5f5f5', width: '25%' }}
+      >
+        <Story />
+      </div>
     ),
   ],
 };

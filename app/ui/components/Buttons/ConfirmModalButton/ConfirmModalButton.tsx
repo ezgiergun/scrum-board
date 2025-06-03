@@ -8,7 +8,7 @@ import Modal from '@/app/ui/components/Modal';
 export default function ConfirmModalButton({
   modalName,
   iconButton,
-  confirmText='Do you want to perform this action?',
+  confirmText = 'Do you want to perform this action?',
   description,
   confirmLabel = 'Confirm',
   cancelLabel = 'Cancel',
