@@ -53,7 +53,7 @@ export default function Task({
       ref={setNodeRef}
       style={style}
       className={clsx(
-        'relative z-20 w-[95%] rounded border bg-gray-100 p-2 shadow-sm',
+        'relative z-20 w-[95%] rounded border bg-elusive-100 p-2 shadow-sm dark:bg-londonsquare-200',
         isHighlighted && 'border-orange-500',
         isOverlay && 'pointer-events-none scale-105 opacity-90 shadow-lg',
         className

@@ -22,7 +22,7 @@ export default function ConfirmModalButton({
         {({ onCloseModal }: { onCloseModal: () => void }) => {
           return (
             <section
-              className="m-1 space-y-4 rounded-lg bg-elusive-500 p-6"
+              className="m-1 space-y-4 rounded-lg bg-elusive-500 p-6 dark:bg-elusive-600"
               role="alertdialog"
               aria-labelledby={`confirm-${modalName}-title`}
               aria-describedby={`confirm-${modalName}-desc`}

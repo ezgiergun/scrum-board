@@ -57,7 +57,7 @@ export default function Column({ column, className }: Readonly<ColumnProps>) {
     <section
       ref={setNodeRef}
       className={clsx(
-        'max-h-screen min-h-[100px] w-full flex-shrink-0 rounded-lg bg-elusive-500 p-4 shadow sm:w-72',
+        'max-h-screen min-h-[100px] w-full flex-shrink-0 rounded-lg bg-elusive-500 p-4 shadow sm:w-72 dark:bg-londonsquare-500',
         className
       )}
       aria-labelledby={`column-title-${column.title}`}

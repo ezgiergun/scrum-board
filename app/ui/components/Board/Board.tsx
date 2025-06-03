@@ -78,7 +78,7 @@ export default function Board({ className }: Readonly<BoardProps>) {
     <Modal>
       <main
         className={clsx(
-          'flex h-[calc(100dvh-5rem)] flex-col-reverse flex-nowrap items-center gap-4 overflow-x-auto overflow-y-auto rounded-lg border-1 border-londonsquare-500 bg-freespeechblue-500 px-4 py-4 sm:flex-row sm:flex-wrap sm:px-20 sm:py-10 ',
+          'flex h-[calc(100dvh-5rem)] flex-col-reverse flex-nowrap items-center gap-4 overflow-x-auto overflow-y-auto rounded-lg border-1 border-londonsquare-500 bg-freespeechblue-500 px-4 py-4 sm:flex-row sm:flex-wrap sm:px-20 sm:py-10 dark:bg-earl-500 ',
           className
         )}
         aria-label="Scrum board"
