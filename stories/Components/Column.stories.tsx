@@ -63,7 +63,6 @@ export const Default: Story = {
   name: 'Default Column',
   args: {
     column: sampleColumn,
-    className: 'bg-red-400',
   },
 };
 
@@ -71,6 +70,6 @@ export const WithCustomClass: Story = {
   name: 'Column with Custom Class',
   args: {
     column: sampleColumn,
-    className: 'border-4 border-red-500',
+    className: 'bg-red-400 border-4 border-red-500',
   },
 };

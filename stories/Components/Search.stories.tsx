@@ -11,13 +11,15 @@ const meta: Meta<typeof Search> = {
   title: 'Components/Search',
   component: Search,
   tags: ['autodocs'],
-
+  argTypes: {
+    className: { control: 'text' },
+    inputClassName: { control: 'text' },
+    dropdownClassName: { control: 'text' },
+  },
   decorators: [
     (Story) => (
       <MockProvider>
-        <div
-          style={{ padding: '1rem', backgroundColor: '#f5f5f5', width: '20%' }}
-        >
+        <div className="w-1/5 bg-white p-4">
           <Story />
         </div>
       </MockProvider>

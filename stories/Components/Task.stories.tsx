@@ -56,6 +56,10 @@ const meta: Meta<typeof Task> = {
       control: 'boolean',
       description: 'If true, renders task with overlay styling during drag.',
     },
+    className: {
+      control: 'text',
+      description: 'Additional class names',
+    },
   },
 };
 
@@ -69,6 +73,7 @@ export const Default: Story = {
     task: sampleTask,
     columnId: 'todo',
     isOverlay: false,
+    className: '',
   },
 };
 
@@ -78,6 +83,7 @@ export const Highlighted: Story = {
     task: sampleTask,
     columnId: 'todo',
     isOverlay: false,
+    className: '',
   },
   decorators: [
     (Story) => {

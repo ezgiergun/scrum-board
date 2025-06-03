@@ -33,9 +33,7 @@ const meta: Meta<typeof ConfirmModalButton> = {
   },
   decorators: [
     (Story) => (
-      <div
-        style={{ padding: '1rem', backgroundColor: '#f5f5f5', width: '25%' }}
-      >
+      <div className="w-1/4 bg-white p-4">
         <Story />
       </div>
     ),

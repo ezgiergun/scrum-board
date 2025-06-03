@@ -3,10 +3,16 @@
 import { useAppDispatch, useAppSelector } from '@/app/lib/store/hooks';
 import { setHighlightedTaskId } from '@/app/lib/store/slices/boardSlice';
 import type { Column, Task } from '@/app/types';
+import type { SearchProps } from '@/app/ui/components/Search/types';
 import useOutsideClick from '@/app/ui/hooks/useOutsideClick';
+import clsx from 'clsx';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-export default function Search() {
+export default function Search({
+  className,
+  inputClassName,
+  dropdownClassName,
+}: Readonly<SearchProps>) {
   const dispatch = useAppDispatch();
   const inputRef = useRef<HTMLInputElement>(null);
   const handleClose = useCallback(() => {
@@ -60,7 +66,10 @@ export default function Search() {
   return (
     <div
       ref={containerRef}
-      className="relative flex h-8 rounded-sm border-1 border-gray-600"
+      className={clsx(
+        'relative flex h-8 rounded-sm border-1 border-gray-600',
+        className
+      )}
     >
       <input
         ref={inputRef}
@@ -69,11 +78,19 @@ export default function Search() {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         aria-label="Search tasks"
-        className="flex max-w-16 rounded border border-gray-300 px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-freespeechblue-500 sm:max-w-full sm:text-sm"
+        className={clsx(
+          'flex max-w-16 rounded border border-gray-300 px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-freespeechblue-500 sm:max-w-full sm:text-sm',
+          inputClassName
+        )}
       />
 
       {open && (
-        <ul className="absolute z-50 mt-8 max-h-60 w-full overflow-y-auto rounded border border-gray-300 bg-white shadow-lg">
+        <ul
+          className={clsx(
+            'absolute z-50 mt-8 max-h-60 w-full overflow-y-auto rounded border border-gray-300 bg-white shadow-lg',
+            dropdownClassName
+          )}
+        >
           {results.length > 0 ? (
             results.map(({ task, column }) => (
               <li key={task.id}>

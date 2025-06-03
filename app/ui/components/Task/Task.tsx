@@ -7,13 +7,14 @@ import DeleteIcon from '@/app/ui/components/Icons/DeleteIcon/DeleteIcon';
 import EditIcon from '@/app/ui/components/Icons/EditIcon/EditIcon';
 import type { TaskProps } from '@/app/ui/components/Task/types';
 import { useDraggable } from '@dnd-kit/core';
-import cx from 'clsx';
+import clsx from 'clsx';
 import { useMemo } from 'react';
 import ModalButton from '../Buttons/ModalButton';
 export default function Task({
   task,
   columnId,
   isOverlay,
+  className,
 }: Readonly<TaskProps>) {
   const dispatch = useAppDispatch();
   const highlightedTaskId = useAppSelector(
@@ -51,10 +52,11 @@ export default function Task({
     <div
       ref={setNodeRef}
       style={style}
-      className={cx(
+      className={clsx(
         'relative z-20 w-[95%] rounded border bg-gray-100 p-2 shadow-sm',
         isHighlighted && 'border-orange-500',
-        isOverlay && 'pointer-events-none scale-105 opacity-90 shadow-lg'
+        isOverlay && 'pointer-events-none scale-105 opacity-90 shadow-lg',
+        className
       )}
       aria-label={`Task: ${task.title}`}
     >

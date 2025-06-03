@@ -9,14 +9,12 @@ const meta: Meta<typeof Form> = {
   tags: ['autodocs'],
   argTypes: {
     modalName: { control: 'text' },
-    className: { control: false },
+    className: { control: 'text' },
     onSubmitAction: { action: 'submitted' },
   },
   decorators: [
     (Story) => (
-      <div
-        style={{ padding: '1rem', backgroundColor: '#f5f5f5', width: '55%' }}
-      >
+      <div className="w-1/2 bg-white p-4">
         <Story />
       </div>
     ),
