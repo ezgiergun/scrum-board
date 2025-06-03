@@ -1,3 +1,4 @@
+# Scrum Board – Task Manager
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
@@ -16,21 +17,41 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Live Preview
+[Visit This Link](https://scrum-board-gilt.vercel.app/)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Storybook Live Preview
+[Visit This Link](https://683ec758e62e0609827e08f9-zbqmbfjahv.chromatic.com)
 
-## Learn More
+## Running Storybook
 
-To learn more about Next.js, take a look at the following resources:
+To start the Storybook development server:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build-storybook && npm run storybook
+# or
+yarn build-storybook && yarn storybook
+# or
+pnpm build-storybook && pnpm storybook
+# or
+bun build-storybook && bun storybook
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Storybook will be available at http://localhost:6006
 
-## Deploy on Vercel
+## High Level Overview
+![Board Overview](./public/images/highlevel-overview.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+A simple Scrum Board inspired by Trello, built with Next.js, TypeScript, Redux Toolkit, Tailwind CSS, and local storage.
+-  Three Default Columns: To Do, In Progress, Done
+- Add tasks to any column
+- Edit and delete tasks
+- Drag and drop tasks between columns
+- Persist board data in localStorage
+- Edit tasks via modal with input
+- Filter tasks with real-time search: Implemented with controlled input and filter() over Redux state. Lightweight and reactive way, there is no need for search libraries in a small-scale app.
+- Populate board with tasks from public API: Uses Redux createAsyncThunk for fetching and dispatching tasks. Better than fetching directly in components, keeps side effects centralized and testable.
+- Accessibility considerations: Custom hooks like useHandleKeys and useOutsideClick + proper role, aria-labelledby, and aria-describedby.
+- Add, rename, and delete dynamic columns (except the default ones). Deleted column's tasks move to "To Do": Tracked via Redux with task reassignment logic for deletion.
