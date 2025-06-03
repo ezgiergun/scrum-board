@@ -87,7 +87,7 @@ export default function Search({
       {open && (
         <ul
           className={clsx(
-            'absolute z-50 mt-8 max-h-60 w-full overflow-y-auto rounded border border-gray-300 bg-white shadow-lg',
+            'absolute z-50 mt-8 max-h-60 w-full overflow-y-auto rounded border border-gray-300 bg-white dark:bg-elusive-700  shadow-lg',
             dropdownClassName
           )}
         >

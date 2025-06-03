@@ -133,7 +133,7 @@ function Window({ children, name }: WindowProps) {
         }}
         aria-modal="true"
         tabIndex={-1}
-        className="-translate-x-1/2 -translate-y-1/2 fixed top-1/2 left-1/2 transform rounded-lg bg-narenjiorange-500 p-7 shadow-md outline-none transition-all duration-500 dark:bg-elusive-800"
+        className="-translate-x-1/2 -translate-y-1/2 fixed top-1/2 left-1/2 transform rounded-lg text-earl-500 bg-narenjiorange-500 p-7 shadow-md outline-none transition-all duration-500 dark:bg-elusive-800"
       >
         <CloseButton onClick={close} />
         {typeof children === 'function'
