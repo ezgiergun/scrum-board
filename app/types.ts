@@ -13,4 +13,5 @@ export interface Task {
 export interface BoardState {
   columns: Column[];
   tasks: Record<string, Task>;
+  highlightedTaskId: string | null;
 }

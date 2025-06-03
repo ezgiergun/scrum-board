@@ -15,6 +15,7 @@
     "lineEnding": "lf"
   },
   "javascript": {
+    "parser": {},
     "formatter": {
       "arrowParentheses": "always",
       "bracketSameLine": false,
